@@ -1,0 +1,75 @@
+{
+  "name": "SPECTRE - Operative OS",
+  "short_name": "SPECTRE",
+  "description": "Personal dashboard for tracking physical, tactical, and intellectual progression over 6 months",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#09090b",
+  "background_color": "#09090b",
+  "screenshots": [
+    {
+      "src": "/screenshot-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/screenshot-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/screenshot-512-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["productivity", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Mission Control",
+      "short_name": "Dashboard",
+      "description": "View your mission progress and daily protocols",
+      "url": "/?page=dashboard",
+      "icons": [{ "src": "/shortcut-dashboard.png", "type": "image/png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Physical Vault",
+      "short_name": "Lifts",
+      "description": "Track your lifting progress",
+      "url": "/?page=physical",
+      "icons": [{ "src": "/shortcut-physical.png", "type": "image/png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Mission Dossier",
+      "short_name": "Missions",
+      "description": "View active missions and objectives",
+      "url": "/?page=missions",
+      "icons": [{ "src": "/shortcut-missions.png", "type": "image/png", "sizes": "192x192" }]
+    }
+  ]
+}
