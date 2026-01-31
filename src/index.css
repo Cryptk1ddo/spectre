@@ -1,40 +1,42 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600;700&display=swap');
 
-/* Swiss Design - Operative Theme */
+/* SpectreOS Design - Operative Theme (V2.0) */
 @theme {
-  /* Refined Color Palette - Swiss Minimalism */
-  --color-slate-950: #0a0a0a;
-  --color-slate-900: #121212;
-  --color-slate-800: #1a1a1a;
-  --color-slate-700: #2a2a2a;
-  --color-slate-600: #404040;
-  --color-slate-500: #525252;
-  --color-slate-400: #737373;
-  --color-slate-300: #a3a3a3;
-  --color-slate-200: #d4d4d4;
-  --color-slate-100: #f5f5f5;
+  /* Refined Color Palette - Deep Black, Holographic Accents */
+  --color-slate-950: #010101; /* Near-black for OLED */
+  --color-slate-900: #0a0a0a;
+  --color-slate-800: #121212;
+  --color-slate-700: #1a1a1a;
+  --color-slate-600: #2a2a2a;
+  --color-slate-500: #3a3a3a;
+  --color-slate-400: #525252;
+  --color-slate-300: #737373;
+  --color-slate-200: #a3a3a3;
+  --color-slate-100: #d4d4d4;
   
-  --color-emerald-500: #10b981;
-  --color-emerald-400: #34d399;
-  --color-emerald-600: #059669;
+  --color-emerald-500: #00e69b; /* Brighter emerald */
+  --color-emerald-400: #00ffb5; /* Neon highlight */
+  --color-emerald-600: #00b378;
+  --color-violet-400: #a78bfa; /* Subtle secondary accent */
   
-  --color-accent: #10b981;
-  --color-warning: #f59e0b;
+  --color-accent: var(--color-emerald-500);
+  --color-warning: #fbbf24;
   --color-error: #ef4444;
   --color-info: #3b82f6;
   
-  /* Swiss Typography - Precision Font Stack */
-  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif;
+  /* Typography - Tactical & Technical */
+  --font-display: 'Orbitron', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif;
-  --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Roboto Mono', monospace;
   
-  /* Swiss Grid System */
+  /* Grid & Spacing */
   --grid-unit: 8px;
-  --spacing-xs: calc(var(--grid-unit) * 1);  /* 8px */
-  --spacing-sm: calc(var(--grid-unit) * 2);  /* 16px */
-  --spacing-md: calc(var(--grid-unit) * 3);  /* 24px */
-  --spacing-lg: calc(var(--grid-unit) * 4);  /* 32px */
-  --spacing-xl: calc(var(--grid-unit) * 6);  /* 48px */
+  --spacing-xs: calc(var(--grid-unit) * 1);
+  --spacing-sm: calc(var(--grid-unit) * 2);
+  --spacing-md: calc(var(--grid-unit) * 3);
+  --spacing-lg: calc(var(--grid-unit) * 4);
+  --spacing-xl: calc(var(--grid-unit) * 6);
 }
 
 /* Global Styles */
@@ -46,10 +48,10 @@
   html {
     font-family: var(--font-sans);
     background-color: var(--color-slate-950);
-    color: var(--color-slate-300);
+    color: var(--color-slate-200); /* Lighter default text */
     overscroll-behavior-y: contain;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6; /* Slightly increased for readability */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -72,7 +74,7 @@
   
   @media (max-width: 380px) {
     html {
-      font-size: 13px;
+      font-size: 13.5px; /* Slightly larger for small phones */
     }
   }
   
@@ -86,7 +88,7 @@
     user-select: none;
     -webkit-touch-callout: none;
     touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.1);
+    -webkit-tap-highlight-color: rgba(0, 230, 155, 0.15); /* Emerald tap highlight */
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
@@ -100,19 +102,21 @@
     font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em; /* Tighter for display */
     margin: 0;
+    color: var(--color-slate-100);
   }
   
-  h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
-  h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
-  h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+  h1 { font-size: clamp(2rem, 6vw, 3rem); } /* Larger display */
+  h2 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+  h3 { font-size: clamp(1.5rem, 4vw, 2rem); }
   
   p {
     font-family: var(--font-sans);
-    line-height: 1.6;
-    letter-spacing: 0;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
     margin: 0;
+    color: var(--color-slate-300);
   }
   
   code, pre, .font-mono {
@@ -121,8 +125,9 @@
   }
   
   :focus-visible {
-    outline: 2px solid var(--color-emerald-500);
+    outline: 2px solid var(--color-emerald-400);
     outline-offset: 2px;
+    border-radius: 4px; /* Consistent focus style */
   }
   
   :focus:not(:focus-visible) {
@@ -190,33 +195,39 @@
   }
   
   .glow-emerald {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 20px rgba(0, 230, 155, 0.4), 0 0 40px rgba(0, 230, 155, 0.2);
   }
   
   .glass {
-    background: rgba(15, 15, 18, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(39, 39, 42, 0.4);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(30px) saturate(1.8);
+    -webkit-backdrop-filter: blur(30px) saturate(1.8);
+    border: 1px solid rgba(26, 26, 26, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 
   .card-elevated {
-    background: rgba(18, 18, 18, 0.8);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: rgba(10, 10, 10, 0.75); /* Deeper background */
+    border-radius: 16px; /* Softer corners */
+    border: 1px solid rgba(26, 26, 26, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
   }
   
   .safe-area-pb {
-    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 
   .safe-area-pt {
-    padding-top: max(0.5rem, env(safe-area-inset-top));
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-px {
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
   }
 
   .scrollbar-hide {
@@ -226,5 +237,71 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  
+  /* New: Holographic Glow for interactive elements */
+  .holographic-glow {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  
+  .holographic-glow::before {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(from 180deg at 50% 50%, #00ffb5 0deg, #a78bfa 90deg, #00ffb5 180deg);
+    opacity: 0.15;
+    filter: blur(25px);
+    animation: rotate-glow 8s linear infinite;
+    pointer-events: none;
+  }
+  
+  .holographic-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .holographic-glow > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* New: Energy Border for subtle animated borders */
+  .energy-border {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background-clip: padding-box;
+  }
+  
+  .energy-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px; 
+    background: linear-gradient(45deg, rgba(0, 230, 155, 0.4), rgba(167, 139, 250, 0.3), rgba(0, 230, 155, 0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: shimmer-border 4s infinite linear;
+    background-size: 200% 200%;
+  }
+  
+  @keyframes shimmer-border {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
   }
 }
