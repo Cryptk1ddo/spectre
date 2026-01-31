@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Clock,
   Check,
-  Flame,
   Quote,
   TrendingUp,
   ChevronRight,
