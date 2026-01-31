@@ -6,7 +6,6 @@ import {
   Target,
   BookOpen,
   Menu,
-  X,
   TrendingUp,
   Lock,
   Award,
