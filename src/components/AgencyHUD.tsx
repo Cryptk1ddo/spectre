@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Zap, Target, Activity, Users, Lock, ChevronRight, BarChart3, Search, MessageSquare } from 'lucide-react';
+import { Shield, Zap, Target, Activity, Users, Lock, ChevronRight, BarChart3, MessageSquare } from 'lucide-react';
 
 const AgencyHUD = () => {
   const [activeSignals, setActiveSignals] = useState<string[]>([]);
-  const [leadStatus, setLeadStatus] = useState('MONITORING');
   const [processedLeads, setProcessedLeads] = useState(142);
 
   // Simulated live data stream
